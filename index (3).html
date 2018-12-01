@@ -1,0 +1,119 @@
+<html>
+<head>
+<style type="text/css">
+.inp,input[type="number"] {
+width:70px; height:50px;
+text-align:left;
+
+}
+
+/*output element*/
+.input,output {
+display:block;
+border:1px solid #333333;
+border-radius:5px;
+min-width:25px; height:25px;
+margin:3px; padding:2px;
+text-align:center;
+background:#000000;
+color:#ffffff;
+}
+ body{
+ 	position: relative;
+ 
+  margin-left: 30%;
+
+ }
+
+.con{
+	position: relative;
+	
+	width:50%;
+	height:60%;
+	padding:10px 20px 50px 20px;
+	
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(odd){background-color: #a4a7a8}
+
+th {
+    background-color: rgb(8, 52, 104);
+    color: white;
+}
+
+.new{
+	visibility: hidden;
+}
+</style>
+<script type="text/javascript">
+
+	function updateOutput() {
+var form = document.getElementById("conv");
+var out = form.elements["z"];
+var out1 = form.elements["a"];
+var out2 = form.elements["b"];
+var out3 = form.elements["c"];
+var out4 = form.elements["d"];
+var num1 = parseInt(form.elements["x"].value);
+var operator = parseInt(form.elements["op"].value);
+
+out1.value = num1*0.014;
+out2.value = num1*0.052;
+out3.value = num1*0.020;
+out4.value = num1*1.49;
+
+}
+
+</script>
+</head>
+<body>
+<h1 style="font-size:60px;">Currency Converter</h1>
+
+<form id="conv"  oninput="updateOutput()">
+<div class="con">
+<div name="inp">
+<label><b>Enter money in INR:</b></label>
+<input name="x" type="number" value="0" />
+</div>
+<select class="new" name="op" onchange="updateOutput()">
+</select>
+
+
+<table>
+	<tr>
+    <th>Currency</th>
+    <th>Currency Value </th>
+  </tr>
+  <tr>
+    <td>US Dollar</td>
+    <td><output name="a">0</output></td>
+  </tr>
+  <tr>
+    <td>United Arab Emirates Dirham</td>
+    <td><output name="b">0</output></td> 
+  </tr>
+  <tr>
+    <td>Australian Dollar</td>
+    <td><output name="c">0</output></td> 
+  </tr>
+   <tr>
+    <td>CFP Franc</td>
+    <td><output name="d">0</output></td> 
+  </tr>
+</table>
+</div>
+</form>
+</body>
+</html>
